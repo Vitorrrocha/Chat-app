@@ -37,6 +37,26 @@ This project was developed with the following technologies:
 
 A chat app created using ejs, node with express and socket.io.
 
+### Available Scripts 💻
+
+**Cloning repository and running**
+
+```bash
+$ git clone https://github.com/Vitorrrocha/Socket.IO-Chat && cd Socket.IO-Chat
+```
+
+**Installing dependencies**
+
+```bash
+$ yarn
+```
+
+**Getting Started**
+
+```bash
+$ node server.js
+```
+
 ## :memo: License
 
 MIT license. See the file [LICENSE](LICENSE) for more details.
