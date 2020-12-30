@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket.IO Chat</title>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js" integrity="sha512-aMGMvNYu8Ue4G+fHa359jcPb1u+ytAF+P2SCb+PxrjCdO3n3ZTxJ30zuH39rimUggmTwmh2u7wvQsDTHESnmfQ==" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 class="title">Socket.IO Chat</h1>
+    <form id='chat'>
+        <input type="text" name="username" placeholder="Type your user">
+        <div class="messages"></div>
+        <input type="text" name="message" placeholder="Send a message...">
+        <button type="submit">Send</button>
+    </form>
+    <footer>
+        <h5>© 2020 <a class="first" href="https://github.com/Vitorrrocha">Vitor A. B. Rocha.</a> All Rights Reserved.</h5>
+    </footer>
+
+    <script type='text/javascript'>
+        var socket = io('http://localhost:3000');
+
+        function renderMessage(message) {
+            $('.messages').append('<div class="message"><strong>'+ message.author +'</strong>: '+ message.message + ' </div>');
+        }
+
+        socket.on('previousMessages', function(messages) {
+            for(message of messages) {
+                renderMessage(message);
+            }
+        })
+
+        socket.on('receivedMessage',function(message) {
+           renderMessage(message); 
+        });
+
+        $('#chat').submit(function (event) {
+        event.preventDefault();
+
+        var author = $('input[name=username').val();
+        var message = $('input[name=message').val();
+
+        if (author.length && message.length) {
+            var messageObject = {
+                author: author,
+                message: message,
+            };
+
+            renderMessage(messageObject);
+
+            socket.emit('sendMessage', messageObject);
+        }
+    });
+    </script>
+</body>
+</html>

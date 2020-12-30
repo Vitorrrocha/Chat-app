@@ -1,0 +1,81 @@
+html, body {
+    height: 100%;
+    background-color: rgb(47, 110, 145);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+
+  .title {
+    color: rgb(206, 178, 178);
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: -60px;
+  }
+
+  #chat {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  input {
+    width: 600px;
+    border: 1px solid #ddd;
+    height: 50px;
+    padding: 0 20px;
+    font-size: 14px;
+    border-radius: 4px;
+
+  }
+  
+  button {
+    width: 600px;
+    height: 50px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #069;
+    margin-top: 10px;
+  }
+  
+button:hover {
+  color: rgb(10, 50, 97);
+}
+
+  .messages {
+    width: 600px;
+    height: 400px;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: #FFF;
+  }
+
+  footer {
+    height: 60px;
+    background-color: black;
+  }
+
+  footer > h5 {
+    text-align: center;
+    color: rgb(221, 221, 221);
+    padding-top: 20px;
+    font-size: 16px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  footer > h5 > a {
+    text-decoration: none;
+    color: #069;
+  }
+
+  a:hover {
+ color: rgb(117, 194, 235);
+    
+  }
