@@ -1,4 +1,4 @@
-<img alt="Socket.io-Chat" src="githubAssets/logoChat.PNG" />
+<img alt="Socket.io-Chat" src="githubAssets/logoChat.png" />
 
 # Chat-app
 
