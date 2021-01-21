@@ -17,7 +17,7 @@
   </a>
   
   <a href="https://github.com/Vitorrrocha/Socket.IO-Chat/stargazers" style="text-decoration: none">
-    <img alt="Stars" src="https://img.shields.io/github/stars/Vitorrrocha/pSocket.IO-Chat?style=social" />
+    <img alt="Stars" src="https://img.shields.io/github/stars/Vitorrrocha/Socket.IO-Chat?style=social" />
   </a>
 
 </p>
